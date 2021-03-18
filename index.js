@@ -54,25 +54,40 @@ function startMenu() {
     });
 }
 function viewEmployees() {
-    
-}
+    let managerid = getManagersNames();
+    // have to call the managers here or it will only select the employees/managers as a whole.
+    connection.query("SELECT * FROM employee", function(err, res){
+        if (err) throw (err);
+      console.table(res);
+      mainMenu();
+      });
+};
 function viewDepartments() {
-    
-}
+    connection.query("SELECT * FROM department", function(err, res){
+        if (err) throw (err);
+      console.table(res);
+      mainMenu();
+      });
+};
 function viewRoles() {
-    
-}
+    connection.query("SELECT * FROM role", function(err, res){
+        if (err) throw (err);
+      console.table(res);
+      mainMenu();
+      });
+};
+// end of get routes
 function addDepartment() {
     
-}
+};
 function updateEmployee() {
     
-}
+};
 function addRole() {
     
-}
+};
 function addEmployee() {
     
-}
+};
 
 
