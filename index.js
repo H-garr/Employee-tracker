@@ -198,18 +198,54 @@ function updateEmployee() {
 
 
 function getManagersNames(){
+    var allManagers = [];
+    // define here
+    connection.query("SELECT * FROM employee", function(err, res){
+      if (err) throw (err);
+      for (let i = 0; i < res.length; i++) {
+        if (res[i].manager_id === "null"){
+          allManagers.push(res[i]);
+        // add all of them into an array. if no original data
+        };
+      };
+    });
+    return allManagers;
+    // if there was no data inside, now there is!
+  };
 
-}
+// comments in managers applies to all of the functions below, defines array,then fills it if it doesnt meet requirements and runs a loop to fill
 
 function getDepartmentIds(){
+    var userSelectedData = [];
+    connection.query("SELECT * FROM department", function(err, res){
+      if (err) throw (err);
+      for(let i = 0; i < res.length; i++){
+        userSelectedData.push(`${res[i].id} ${res[i].name}`);
+      };
+    });
+    return userSelectedData;
+  };
 
-}
 function getRoleIDs(){
-
-}
+    var userSelectedData = [];
+    connection.query("SELECT role.id, role.title FROM role", function(err, res){
+      if (err) throw (err);
+      for (let i =0; i < res.length; i++){
+        userSelectedData.push(`${res[i].id} ${res[i].title}`);
+      };
+    });
+    return userSelectedData;
+};
 
 function getEmployees(){
-
-}
+    var userSelectedData = [];
+    connection.query("SELECT * FROM employee", function(err, res){
+      if (err) throw (err);
+      for (let i = 0; i < res.length; i++){
+        userSelectedData.push(`${res[i].id} ${res[i].first_name} ${res[i].last_name}`);
+      };
+    });
+    return userSelectedData;
+  };
 
 
