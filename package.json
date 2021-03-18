@@ -1,0 +1,24 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "An app to create to track and add and remove employees from a database",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-garr/Employee-tracker.git"
+  },
+  "author": "Hayden Garrard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H-garr/Employee-tracker/issues"
+  },
+  "homepage": "https://github.com/H-garr/Employee-tracker#readme"
+}
