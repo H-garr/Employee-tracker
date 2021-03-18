@@ -175,7 +175,7 @@ function updateEmployee() {
           name: "role_id",
           type: "list",
           message: "New role?",
-          choices: getRoleIDs()
+          choices: getRoleIds()
         }
       ]).then((data) => {
         let roleID = parseInt(data.role_id);
@@ -226,7 +226,7 @@ function getDepartmentIds(){
     return userSelectedData;
   };
 
-function getRoleIDs(){
+function getRoleIds(){
     var userSelectedData = [];
     connection.query("SELECT role.id, role.title FROM role", function(err, res){
       if (err) throw (err);
@@ -239,7 +239,8 @@ function getRoleIDs(){
 
 function getEmployees(){
     var userSelectedData = [];
-    connection.query("SELECT * FROM employee", function(err, res){
+    connection.query("SELECT * FROM employee", 
+    function(err, res){
       if (err) throw (err);
       for (let i = 0; i < res.length; i++){
         userSelectedData.push(`${res[i].id} ${res[i].first_name} ${res[i].last_name}`);
